@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-7">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub アドレス変換ツール</title>
+<style>
+:root{--bg:#0c1424;--panel:#18263c;--panel2:#21334d;--text:#f5f8fc;--muted:#c2d0e0;--cyan:#62d9fa;--border:#3d5570;--green:#9df3bb;--btn:#116b8b;--btnText:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Meiryo,"Yu Gothic",system-ui,sans-serif}header{position:sticky;top:0;z-index:10;background:#101d31f5;border-bottom:1px solid var(--border);padding:12px 18px}header .inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}h1{font-size:clamp(19px,3vw,27px);margin:0;color:var(--cyan)}nav a{color:var(--text);padding:4px 9px;text-decoration:none}main{max-width:1100px;margin:auto;padding:24px 14px 70px}h2{font-size:clamp(18px,2.6vw,22px);margin:0 0 10px}.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:clamp(16px,2.5vw,24px);margin:0 0 20px;box-shadow:0 8px 24px #0002}.muted{color:var(--muted)}.sample{color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:12px}label{display:block;margin-bottom:6px;color:var(--text);font-weight:bold}textarea,input{display:block;width:100%;border-radius:10px;border:1px solid #7891ad;background:#0d1b2e;color:white;padding:12px;font:inherit}textarea{min-height:175px;resize:vertical}input:focus,textarea:focus{outline:2px solid var(--cyan)}button{font:inherit;cursor:pointer;background:var(--btn);border:1px solid #72c7e4;color:var(--btnText);border-radius:10px;padding:10px 15px;font-weight:bold}button:hover{background:#1687a8}button:focus-visible,a:focus-visible{outline:3px solid #f8d66d;outline-offset:2px}.secondary{background:#34465f}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.entry{background:var(--panel2);border:1px solid var(--border);border-radius:13px;margin:12px 0;padding:14px}.entry h3{margin:0 0 8px;font-size:17px;overflow-wrap:anywhere}.links{display:grid;grid-template-columns:1fr 1fr;gap:12px}.linkbox{background:#101d30;border-radius:10px;padding:12px;border:1px solid var(--border);min-width:0}.linkbox .kind{color:var(--muted);font-size:14px}.linkbox a{color:var(--cyan);overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}.linkbox a:hover{color:#fff}.linkbox button{display:block;font-size:13px;padding:5px 10px;margin-top:9px}.notice{border-left:4px solid var(--cyan);padding:10px 13px;background:#132c42;border-radius:8px;margin-top:14px}footer{text-align:center;color:var(--muted);padding:20px}.count{font-size:14px;color:var(--green)}@media(max-width:650px){.grid,.links{grid-template-columns:1fr}main{padding:14px 10px 50px}header{position:sticky}button{width:auto}}
+</style>
+</head>
+<body>
+<header><div class="inner"><h1>GitHub アドレス変換</h1><nav><a href="#input">入力</a><a href="#results">変換結果</a><a href="#help">使い方</a></nav></div></header>
+<main>
+<section class="card" id="input">
+<h2>1. リポジトリ一覧を貼り付け</h2>
+<p class="muted">1行に1件ずつ、例：atx0543/my-html<br>GitHubの一覧をまとめて貼り付けても大丈夫です。</p>
+<div class="field"><label for="names">GitHubの一覧</label><textarea id="names" spellcheck="false">atx0543/subscbox
+atx0543/subsc-box
+atx0543/kusuri-navi
+atx0543/yen-rate
+atx0543/mkv-to-mp4
+atx0543/search
+atx0543/360panorama-viewer
+atx0543/neon-pass
+atx0543/url-conversion
+atx0543/my-html
+atx0543/gemini-image-studio
+atx0543/atx0543.github.io
+atx0543/Image-Compression-Tool
+atx0543/atx</textarea></div>
+<div class="actions"><button id="convert">アドレスに変換</button><button class="secondary" id="clear">入力を消去</button><button class="secondary" id="copyall">結果をまとめてコピー</button></div>
+</section>
+<section class="card" id="results"><h2>2. クリックできるアドレス</h2><div class="count" id="count"></div><div id="output" aria-live="polite"></div></section>
+<section class="card" id="help"><h2>3. 2種類のアドレスの違い</h2>
+<div class="grid"><div class="linkbox"><div class="kind">GitHubの保存場所（リポジトリ）</div><p class="sample">https://github.com/atx0543/my-html</p><p>コードやファイルの一覧を開く住所です。通常はこちらを使います。</p></div><div class="linkbox"><div class="kind">公開ホームページ（GitHub Pages）</div><p class="sample">https://atx0543.github.io/my-html/</p><p>HTMLページを表示する住所です。GitHub Pagesの設定が必要です。</p></div></div>
+<div class="notice">注意：ここで作成した「公開ホームページ」の住所は候補です。実際に表示できるかは、各リポジトリでGitHub Pagesを有効にしているか、公開設定や公開フォルダーによって異なります。HTMLファイルが index.html 以外の場合は、ファイル名を末尾に追加することがあります。</div>
+<p class="muted">特別なリポジトリ名「atx0543.github.io」の公開ホームページ候補は https://atx0543.github.io/ です。</p></section>
+</main><footer>GitHub アドレス変換ツール｜ローカルで動作・外部ライブラリ不要</footer>
+<script>
+(function(){
+'use strict';
+const area=document.getElementById('names'),out=document.getElementById('output'),count=document.getElementById('count');
+let current=[];
+function urlFor(text){
+  let s=text.trim().replace(/^[-・\s]+/,'');
+  s=s.replace(/^https?:\/\/(?:www\.)?github\.com\//i,'').replace(/\/+$/,'');
+  const match=s.match(/^([A-Za-z0-9](?:[A-Za-z0-9-]{0,38}))\/([A-Za-z0-9_.-]+)$/);
+  if(!match)return null;
+  const user=match[1],repo=match[2];
+  const base='https://'+user.toLowerCase()+'.github.io/';
+  return {name:user+'/'+repo,github:'https://github.com/'+encodeURIComponent(user)+'/'+encodeURIComponent(repo),pages:repo.toLowerCase()===user.toLowerCase()+'.github.io'?base:base+encodeURIComponent(repo)+'/'};
+}
+function elem(tag,cls,text){let e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
+function linkBox(kind,url){
+  const box=elem('div','linkbox'),lab=elem('div','kind',kind),a=elem('a','',url),btn=elem('button','secondary','コピー');
+  a.href=url;a.target='_blank';a.rel='noopener noreferrer';
+  btn.type='button';btn.addEventListener('click',()=>copy(url,btn));
+  box.append(lab,a,btn);return box;
+}
+async function copy(text,button){
+  try{await navigator.clipboard.writeText(text);if(button){const old=button.textContent;button.textContent='コピーしました';setTimeout(()=>button.textContent=old,1500);}else alert('コピーしました');}
+  catch(e){const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();alert(ok?'コピーしました':'コピーできません。アドレスを選択してコピーしてください。');}
+}
+function convert(){
+  const lines=area.value.split(/\r?\n/),seen=new Set();current=[];let invalid=0;
+  for(const line of lines){if(!line.trim())continue;const item=urlFor(line);if(!item){invalid++;continue;}if(seen.has(item.name.toLowerCase()))continue;seen.add(item.name.toLowerCase());current.push(item);}
+  out.replaceChildren();count.textContent=current.length+' 件のアドレスを作成'+(invalid?' ／ 読み取れない行 '+invalid+' 件':'');
+  for(const item of current){const box=elem('article','entry'),title=elem('h3','',item.name),links=elem('div','links');links.append(linkBox('GitHubの保存場所',item.github),linkBox('公開ホームページ（Pages設定が必要）',item.pages));box.append(title,links);out.appendChild(box);}
+  if(!current.length)out.append(elem('p','muted','「ユーザー名/リポジトリ名」の形で入力してください。'));
+}
+document.getElementById('convert').addEventListener('click',convert);
+document.getElementById('clear').addEventListener('click',()=>{area.value='';convert();area.focus();});
+document.getElementById('copyall').addEventListener('click',()=>{if(!current.length){alert('先に変換してください。');return;}copy(current.map(x=>x.name+'\nGitHub: '+x.github+'\nホームページ候補: '+x.pages).join('\n\n'));});
+convert();
+})();
+</script>
+</body>
+</html>
