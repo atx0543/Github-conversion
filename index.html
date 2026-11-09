@@ -1,78 +1,44 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GitHub ã‚¢ãƒ‰ãƒ¬ã‚¹å¤‰æ›ãƒ„ãƒ¼ãƒ«</title>
+<meta charset="Shift_JIS">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GitHub ƒAƒhƒŒƒX©“®•ÏŠ·EŠ®‘S”Å</title>
 <style>
-:root{--bg:#0c1424;--panel:#18263c;--panel2:#21334d;--text:#f5f8fc;--muted:#c2d0e0;--cyan:#62d9fa;--border:#3d5570;--green:#9df3bb;--btn:#116b8b;--btnText:#fff}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Meiryo,"Yu Gothic",system-ui,sans-serif}header{position:sticky;top:0;z-index:10;background:#101d31f5;border-bottom:1px solid var(--border);padding:12px 18px}header .inner{max-width:1100px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}h1{font-size:clamp(19px,3vw,27px);margin:0;color:var(--cyan)}nav a{color:var(--text);padding:4px 9px;text-decoration:none}main{max-width:1100px;margin:auto;padding:24px 14px 70px}h2{font-size:clamp(18px,2.6vw,22px);margin:0 0 10px}.card{background:var(--panel);border:1px solid var(--border);border-radius:16px;padding:clamp(16px,2.5vw,24px);margin:0 0 20px;box-shadow:0 8px 24px #0002}.muted{color:var(--muted)}.sample{color:var(--green);overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{margin-bottom:12px}label{display:block;margin-bottom:6px;color:var(--text);font-weight:bold}textarea,input{display:block;width:100%;border-radius:10px;border:1px solid #7891ad;background:#0d1b2e;color:white;padding:12px;font:inherit}textarea{min-height:175px;resize:vertical}input:focus,textarea:focus{outline:2px solid var(--cyan)}button{font:inherit;cursor:pointer;background:var(--btn);border:1px solid #72c7e4;color:var(--btnText);border-radius:10px;padding:10px 15px;font-weight:bold}button:hover{background:#1687a8}button:focus-visible,a:focus-visible{outline:3px solid #f8d66d;outline-offset:2px}.secondary{background:#34465f}.actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}.entry{background:var(--panel2);border:1px solid var(--border);border-radius:13px;margin:12px 0;padding:14px}.entry h3{margin:0 0 8px;font-size:17px;overflow-wrap:anywhere}.links{display:grid;grid-template-columns:1fr 1fr;gap:12px}.linkbox{background:#101d30;border-radius:10px;padding:12px;border:1px solid var(--border);min-width:0}.linkbox .kind{color:var(--muted);font-size:14px}.linkbox a{color:var(--cyan);overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:3px}.linkbox a:hover{color:#fff}.linkbox button{display:block;font-size:13px;padding:5px 10px;margin-top:9px}.notice{border-left:4px solid var(--cyan);padding:10px 13px;background:#132c42;border-radius:8px;margin-top:14px}footer{text-align:center;color:var(--muted);padding:20px}.count{font-size:14px;color:var(--green)}@media(max-width:650px){.grid,.links{grid-template-columns:1fr}main{padding:14px 10px 50px}header{position:sticky}button{width:auto}}
+:root{--bg:#0c1424;--card:#18263c;--panel:#21334d;--text:#f5f8fc;--muted:#c7d5e6;--cyan:#68dfff;--border:#425b76;--green:#a9f5c4;--button:#116b8b}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:16px/1.7 Meiryo,"Yu Gothic",system-ui,sans-serif}header{position:sticky;top:0;background:#101d31;border-bottom:1px solid var(--border);padding:15px;z-index:2}.wrap{max-width:1100px;margin:auto}header .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}h1{margin:0;color:var(--cyan);font-size:clamp(20px,3vw,28px)}nav a{color:var(--text);margin-left:15px}main{padding:22px 14px 55px}h2{font-size:clamp(19px,2.6vw,23px);margin:0 0 8px}.card{background:var(--card);padding:clamp(16px,2.5vw,24px);margin-bottom:18px;border:1px solid var(--border);border-radius:16px;box-shadow:0 8px 24px #0002}.muted{color:var(--muted)}.row{display:flex;gap:12px;flex-wrap:wrap;align-items:end}.grow{flex:1 1 230px}label{display:block;font-weight:bold;margin-bottom:5px}input,textarea,select{width:100%;background:#0d1b2e;color:white;padding:11px 12px;border-radius:10px;border:1px solid #829bb4;font:inherit}textarea{min-height:150px;resize:vertical}button{padding:11px 16px;border:1px solid #75cbe5;border-radius:10px;color:white;background:var(--button);font:inherit;font-weight:bold;cursor:pointer}button:hover{background:#1886a9}button:disabled{opacity:.6;cursor:wait}.secondary{background:#34465f}.actions{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0}a{color:var(--cyan);overflow-wrap:anywhere}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #ffe18e;outline-offset:2px}.status{background:#102d41;border-left:4px solid var(--cyan);padding:11px;border-radius:7px;margin-top:15px}.error{border-color:#f8be66}.count{color:var(--green);font-weight:bold}.list{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:12px}.item{background:var(--panel);border:1px solid var(--border);padding:15px;border-radius:12px;min-width:0}.item h3{font-size:17px;margin:0;overflow-wrap:anywhere}.desc{color:var(--muted);font-size:14px;min-height:22px}.meta{color:var(--green);font-size:13px}.linkbox{margin-top:10px;background:#0d1c30;border:1px solid var(--border);padding:10px;border-radius:9px}.kind{font-size:13px;color:var(--muted)}.linkbox a{display:block}.mini{padding:5px 11px;margin-top:7px;font-size:13px;background:#34465f}.note{padding:12px;background:#102c40;border-left:4px solid var(--cyan);border-radius:8px;margin-top:15px}details{margin-top:14px}summary{cursor:pointer;color:var(--cyan);font-weight:bold}footer{text-align:center;color:var(--muted);padding:18px}@media(max-width:600px){header{position:static}.actions button{flex:1 1 145px}}
 </style>
 </head>
 <body>
-<header><div class="inner"><h1>GitHub ã‚¢ãƒ‰ãƒ¬ã‚¹å¤‰æ›</h1><nav><a href="#input">å…¥åŠ›</a><a href="#results">å¤‰æ›çµæœ</a><a href="#help">ä½¿ã„æ–¹</a></nav></div></header>
-<main>
-<section class="card" id="input">
-<h2>1. ãƒªãƒã‚¸ãƒˆãƒªä¸€è¦§ã‚’è²¼ã‚Šä»˜ã‘</h2>
-<p class="muted">1è¡Œã«1ä»¶ãšã¤ã€ä¾‹ï¼šatx0543/my-html<br>GitHubã®ä¸€è¦§ã‚’ã¾ã¨ã‚ã¦è²¼ã‚Šä»˜ã‘ã¦ã‚‚å¤§ä¸ˆå¤«ã§ã™ã€‚</p>
-<div class="field"><label for="names">GitHubã®ä¸€è¦§</label><textarea id="names" spellcheck="false">atx0543/subscbox
-atx0543/subsc-box
-atx0543/kusuri-navi
-atx0543/yen-rate
-atx0543/mkv-to-mp4
-atx0543/search
-atx0543/360panorama-viewer
-atx0543/neon-pass
-atx0543/url-conversion
-atx0543/my-html
-atx0543/gemini-image-studio
-atx0543/atx0543.github.io
-atx0543/Image-Compression-Tool
-atx0543/atx</textarea></div>
-<div class="actions"><button id="convert">ã‚¢ãƒ‰ãƒ¬ã‚¹ã«å¤‰æ›</button><button class="secondary" id="clear">å…¥åŠ›ã‚’æ¶ˆå»</button><button class="secondary" id="copyall">çµæœã‚’ã¾ã¨ã‚ã¦ã‚³ãƒ”ãƒ¼</button></div>
+<header><div class="wrap"><h1>GitHub ƒAƒhƒŒƒX©“®•ÏŠ·</h1><nav><a href="#start">æ“¾</a><a href="#results">ˆê——</a><a href="#help">à–¾</a></nav></div></header>
+<main class="wrap">
+<section class="card" id="start">
+<h2>1. ƒ†[ƒU[–¼‚¾‚¯‚Å©“®æ“¾</h2>
+<p class="muted">¶‘¤‚ÌƒŠƒ|ƒWƒgƒŠˆê——‚ğƒRƒs[‚·‚é•K—v‚Í‚ ‚è‚Ü‚¹‚ñBŒöŠJ‚³‚ê‚Ä‚¢‚éƒŠƒ|ƒWƒgƒŠ‚ğ‚Ü‚Æ‚ß‚Äæ“¾‚µ‚Ü‚·B</p>
+<div class="row"><div class="grow"><label for="username">GitHub‚Ìƒ†[ƒU[–¼</label><input id="username" value="atx0543" autocomplete="off" spellcheck="false"></div><button id="load" type="button">ˆê——‚ğ©“®æ“¾</button></div>
+<div class="status" id="status" role="status" aria-live="polite">‹N“®‚É©“®‚Å“Ç‚İ‚İ‚Ü‚·B</div>
+<details><summary>©“®æ“¾‚Å‚«‚È‚¢ê‡Fè“®‚Å“ü—Í‚·‚é</summary><p class="muted">1s‚É1Œ‚¸‚Âuatx0543/my-htmlv‚ÌŒ`®‚Å“ü—Í‚µ‚Ü‚·B</p><textarea id="manual" placeholder="atx0543/my-html&#10;atx0543/Github-conversion"></textarea><div class="actions"><button id="manualShow">“ü—Í‚µ‚½ˆê——‚ğ•\¦</button><button class="secondary" id="manualClear">“ü—Í‚ğÁ‹</button></div></details>
 </section>
-<section class="card" id="results"><h2>2. ã‚¯ãƒªãƒƒã‚¯ã§ãã‚‹ã‚¢ãƒ‰ãƒ¬ã‚¹</h2><div class="count" id="count"></div><div id="output" aria-live="polite"></div></section>
-<section class="card" id="help"><h2>3. 2ç¨®é¡ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã®é•ã„</h2>
-<div class="grid"><div class="linkbox"><div class="kind">GitHubã®ä¿å­˜å ´æ‰€ï¼ˆãƒªãƒã‚¸ãƒˆãƒªï¼‰</div><p class="sample">https://github.com/atx0543/my-html</p><p>ã‚³ãƒ¼ãƒ‰ã‚„ãƒ•ã‚¡ã‚¤ãƒ«ã®ä¸€è¦§ã‚’é–‹ãä½æ‰€ã§ã™ã€‚é€šå¸¸ã¯ã“ã¡ã‚‰ã‚’ä½¿ã„ã¾ã™ã€‚</p></div><div class="linkbox"><div class="kind">å…¬é–‹ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸ï¼ˆGitHub Pagesï¼‰</div><p class="sample">https://atx0543.github.io/my-html/</p><p>HTMLãƒšãƒ¼ã‚¸ã‚’è¡¨ç¤ºã™ã‚‹ä½æ‰€ã§ã™ã€‚GitHub Pagesã®è¨­å®šãŒå¿…è¦ã§ã™ã€‚</p></div></div>
-<div class="notice">æ³¨æ„ï¼šã“ã“ã§ä½œæˆã—ãŸã€Œå…¬é–‹ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸ã€ã®ä½æ‰€ã¯å€™è£œã§ã™ã€‚å®Ÿéš›ã«è¡¨ç¤ºã§ãã‚‹ã‹ã¯ã€å„ãƒªãƒã‚¸ãƒˆãƒªã§GitHub Pagesã‚’æœ‰åŠ¹ã«ã—ã¦ã„ã‚‹ã‹ã€å…¬é–‹è¨­å®šã‚„å…¬é–‹ãƒ•ã‚©ãƒ«ãƒ€ãƒ¼ã«ã‚ˆã£ã¦ç•°ãªã‚Šã¾ã™ã€‚HTMLãƒ•ã‚¡ã‚¤ãƒ«ãŒ index.html ä»¥å¤–ã®å ´åˆã¯ã€ãƒ•ã‚¡ã‚¤ãƒ«åã‚’æœ«å°¾ã«è¿½åŠ ã™ã‚‹ã“ã¨ãŒã‚ã‚Šã¾ã™ã€‚</div>
-<p class="muted">ç‰¹åˆ¥ãªãƒªãƒã‚¸ãƒˆãƒªåã€Œatx0543.github.ioã€ã®å…¬é–‹ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸å€™è£œã¯ https://atx0543.github.io/ ã§ã™ã€‚</p></section>
-</main><footer>GitHub ã‚¢ãƒ‰ãƒ¬ã‚¹å¤‰æ›ãƒ„ãƒ¼ãƒ«ï½œãƒ­ãƒ¼ã‚«ãƒ«ã§å‹•ä½œãƒ»å¤–éƒ¨ãƒ©ã‚¤ãƒ–ãƒ©ãƒªä¸è¦</footer>
+<section class="card" id="results"><h2>2. ƒNƒŠƒbƒN‚Å‚«‚éƒAƒhƒŒƒXˆê——</h2>
+<div class="row"><div class="grow"><label for="filter">–¼‘O‚Åi‚è‚İ</label><input id="filter" type="search" placeholder="—áFhtmlAphoto"></div><div class="grow"><label for="sort">•À‚×‘Ö‚¦</label><select id="sort"><option value="updated">XV“ú‚ÌV‚µ‚¢‡</option><option value="name">–¼‘O‡</option><option value="created">ì¬“ú‚ÌV‚µ‚¢‡</option></select></div></div>
+<div class="actions"><button class="secondary" id="copyNames">–¼‘O‚ğ‚Ü‚Æ‚ß‚ÄƒRƒs[</button><button class="secondary" id="copyLinks">GitHub URL‚ğ‚Ü‚Æ‚ß‚ÄƒRƒs[</button><button class="secondary" id="copyBoth">—¼•û‚ÌURL‚ğƒRƒs[</button></div>
+<p class="count" id="count" aria-live="polite">æ“¾‘O‚Å‚·</p><div class="list" id="list"></div>
+</section>
+<section class="card" id="help"><h2>3. g‚¢•ûE’ˆÓ“_</h2><p>GitHub‚ÌURL‚Íƒ\[ƒXƒR[ƒh‚âƒtƒ@ƒCƒ‹‚ğŒ©‚éƒAƒhƒŒƒX‚Å‚·BGitHub Pages‚ÌURL‚Íƒz[ƒ€ƒy[ƒW‚Æ‚µ‚Ä•\¦‚·‚é‚½‚ß‚ÌƒAƒhƒŒƒX‚Å‚·B</p><div class="note">Pages URL‚ÍŒó•â‚Æ‚µ‚ÄŒvZ‚µ‚½‚à‚Ì‚Å‚·BŒöŠJÏ‚İ‚Æ‚ÍŒÀ‚è‚Ü‚¹‚ñBƒŠƒ|ƒWƒgƒŠ‚²‚Æ‚ÉuSettings ¨ Pagesv‚Ìİ’è‚ª•K—v‚Å‚·B“Æ©ƒhƒƒCƒ“‚âŒöŠJêŠ‚Ìˆá‚¢‚ÅAÀÛ‚ÌURL‚ªˆÙ‚È‚éê‡‚à‚ ‚è‚Ü‚·B</div><p class="muted">GitHubŒö®API‚©‚çŒöŠJî•ñ‚Ì‚İ‚ğæ“¾‚µ‚Ü‚·BƒƒOƒCƒ“‚âAPIƒL[‚Í•s—v‚Å‚·B”ñŒöŠJƒŠƒ|ƒWƒgƒŠ‚Í•\¦‚³‚ê‚Ü‚¹‚ñBGitHub API‚Ì‰ñ”§ŒÀ‚â’ÊMƒGƒ‰[‚Åæ“¾‚Å‚«‚È‚¢ê‡‚ÍAŠÔ‚ğ’u‚¢‚ÄÄæ“¾‚µ‚Ä‚­‚¾‚³‚¢B</p></section>
+</main><footer>GitHub ƒAƒhƒŒƒX©“®•ÏŠ·EŠ®‘S”Å</footer>
 <script>
-(function(){
-'use strict';
-const area=document.getElementById('names'),out=document.getElementById('output'),count=document.getElementById('count');
-let current=[];
-function urlFor(text){
-  let s=text.trim().replace(/^[-ãƒ»\s]+/,'');
-  s=s.replace(/^https?:\/\/(?:www\.)?github\.com\//i,'').replace(/\/+$/,'');
-  const match=s.match(/^([A-Za-z0-9](?:[A-Za-z0-9-]{0,38}))\/([A-Za-z0-9_.-]+)$/);
-  if(!match)return null;
-  const user=match[1],repo=match[2];
-  const base='https://'+user.toLowerCase()+'.github.io/';
-  return {name:user+'/'+repo,github:'https://github.com/'+encodeURIComponent(user)+'/'+encodeURIComponent(repo),pages:repo.toLowerCase()===user.toLowerCase()+'.github.io'?base:base+encodeURIComponent(repo)+'/'};
-}
-function elem(tag,cls,text){let e=document.createElement(tag);if(cls)e.className=cls;if(text!==undefined)e.textContent=text;return e;}
-function linkBox(kind,url){
-  const box=elem('div','linkbox'),lab=elem('div','kind',kind),a=elem('a','',url),btn=elem('button','secondary','ã‚³ãƒ”ãƒ¼');
-  a.href=url;a.target='_blank';a.rel='noopener noreferrer';
-  btn.type='button';btn.addEventListener('click',()=>copy(url,btn));
-  box.append(lab,a,btn);return box;
-}
-async function copy(text,button){
-  try{await navigator.clipboard.writeText(text);if(button){const old=button.textContent;button.textContent='ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸ';setTimeout(()=>button.textContent=old,1500);}else alert('ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸ');}
-  catch(e){const t=document.createElement('textarea');t.value=text;t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();const ok=document.execCommand('copy');t.remove();alert(ok?'ã‚³ãƒ”ãƒ¼ã—ã¾ã—ãŸ':'ã‚³ãƒ”ãƒ¼ã§ãã¾ã›ã‚“ã€‚ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’é¸æŠã—ã¦ã‚³ãƒ”ãƒ¼ã—ã¦ãã ã•ã„ã€‚');}
-}
-function convert(){
-  const lines=area.value.split(/\r?\n/),seen=new Set();current=[];let invalid=0;
-  for(const line of lines){if(!line.trim())continue;const item=urlFor(line);if(!item){invalid++;continue;}if(seen.has(item.name.toLowerCase()))continue;seen.add(item.name.toLowerCase());current.push(item);}
-  out.replaceChildren();count.textContent=current.length+' ä»¶ã®ã‚¢ãƒ‰ãƒ¬ã‚¹ã‚’ä½œæˆ'+(invalid?' ï¼ èª­ã¿å–ã‚Œãªã„è¡Œ '+invalid+' ä»¶':'');
-  for(const item of current){const box=elem('article','entry'),title=elem('h3','',item.name),links=elem('div','links');links.append(linkBox('GitHubã®ä¿å­˜å ´æ‰€',item.github),linkBox('å…¬é–‹ãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸ï¼ˆPagesè¨­å®šãŒå¿…è¦ï¼‰',item.pages));box.append(title,links);out.appendChild(box);}
-  if(!current.length)out.append(elem('p','muted','ã€Œãƒ¦ãƒ¼ã‚¶ãƒ¼å/ãƒªãƒã‚¸ãƒˆãƒªåã€ã®å½¢ã§å…¥åŠ›ã—ã¦ãã ã•ã„ã€‚'));
-}
-document.getElementById('convert').addEventListener('click',convert);
-document.getElementById('clear').addEventListener('click',()=>{area.value='';convert();area.focus();});
-document.getElementById('copyall').addEventListener('click',()=>{if(!current.length){alert('å…ˆã«å¤‰æ›ã—ã¦ãã ã•ã„ã€‚');return;}copy(current.map(x=>x.name+'\nGitHub: '+x.github+'\nãƒ›ãƒ¼ãƒ ãƒšãƒ¼ã‚¸å€™è£œ: '+x.pages).join('\n\n'));});
-convert();
+(function(){'use strict';
+const $=id=>document.getElementById(id),name=$('username'),output=$('list'),status=$('status'),count=$('count');let data=[],ticket=0;
+function msg(s,error){status.textContent=s;status.className='status'+(error?' error':'');}
+function el(tag,cls,value){const x=document.createElement(tag);if(cls)x.className=cls;if(value!==undefined)x.textContent=value;return x;}
+function record(owner,repo,raw){const base='https://'+owner.toLowerCase()+'.github.io/';return {full:owner+'/'+repo,github:'https://github.com/'+encodeURIComponent(owner)+'/'+encodeURIComponent(repo),pages:repo.toLowerCase()===owner.toLowerCase()+'.github.io'?base:base+encodeURIComponent(repo)+'/',description:raw&&raw.description||'',updated:raw&&raw.updated_at||'',created:raw&&raw.created_at||''};}
+function view(){const f=$('filter').value.trim().toLowerCase();const sort=$('sort').value;return data.filter(x=>(x.full+' '+x.description).toLowerCase().includes(f)).sort((a,b)=>sort==='name'?a.full.localeCompare(b.full,'ja'):(b[sort]||'').localeCompare(a[sort]||''));}
+async function copy(s){if(!s){msg('ƒRƒs[‚·‚é“à—e‚ª‚ ‚è‚Ü‚¹‚ñB',true);return;}try{if(navigator.clipboard&&window.isSecureContext){await navigator.clipboard.writeText(s);}else{const t=el('textarea','',s);t.style.position='fixed';t.style.left='-9999px';document.body.appendChild(t);t.select();if(!document.execCommand('copy'))throw Error('copy');t.remove();}msg('ƒRƒs[‚µ‚Ü‚µ‚½B');}catch(e){msg('ƒRƒs[‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½BURL‚ğ‘I‘ğ‚µ‚ÄƒRƒs[‚µ‚Ä‚­‚¾‚³‚¢B',true);}}
+function linkbox(title,url){const box=el('div','linkbox'),head=el('div','kind',title),a=el('a','',url),btn=el('button','mini','URL‚ğƒRƒs[');a.href=url;a.target='_blank';a.rel='noopener noreferrer';btn.addEventListener('click',()=>copy(url));box.append(head,a,btn);return box;}
+function render(){const items=view();output.replaceChildren();count.textContent=items.length+' Œ•\¦i‘S '+data.length+' Œj';if(!items.length){output.append(el('p','muted',data.length?'ŠY“–‚·‚é–¼‘O‚ª‚ ‚è‚Ü‚¹‚ñB':'•\¦‚Å‚«‚éƒŠƒ|ƒWƒgƒŠ‚ª‚ ‚è‚Ü‚¹‚ñB'));return;}for(const x of items){const article=el('article','item'),h=el('h3','',x.full),p=el('p','desc',x.description||'à–¾‚È‚µ'),meta=el('div','meta',x.updated?'ÅIXVF'+x.updated.slice(0,10):'è“®“ü—Í');article.append(h,p,meta,linkbox('GitHub‚Ì•Û‘¶êŠ',x.github),linkbox('ƒz[ƒ€ƒy[ƒWŒó•âiPagesİ’è‚ª•K—vj',x.pages));output.append(article);}}
+async function load(){let user=name.value.trim().replace(/^https?:\/\/(?:www\.)?github\.com\//i,'').replace(/\/.*$/,'').replace(/^@/,'');if(!/^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i.test(user)){msg('³‚µ‚¢ƒ†[ƒU[–¼‚ğ“ü—Í‚µ‚Ä‚­‚¾‚³‚¢B',true);return;}name.value=user;const id=++ticket,button=$('load');button.disabled=true;button.textContent='æ“¾’†...';msg(user+' ‚ÌŒöŠJƒŠƒ|ƒWƒgƒŠ‚ğ’T‚µ‚Ä‚¢‚Ü‚·...');try{let arr=[],page=1;while(true){const r=await fetch('https://api.github.com/users/'+encodeURIComponent(user)+'/repos?type=public&per_page=100&page='+page,{headers:{Accept:'application/vnd.github+json'}});if(!r.ok)throw Error(r.status===404?'ƒ†[ƒU[‚ªŒ©‚Â‚©‚è‚Ü‚¹‚ñB':r.status===403||r.status===429?'GitHub API‚Ì‰ñ”§ŒÀ‚Å‚·B':'’ÊMƒGƒ‰[i'+r.status+'j');const part=await r.json();if(!Array.isArray(part))throw Error('ƒf[ƒ^‚ğ“Ç‚İæ‚ê‚Ü‚¹‚ñB');if(id!==ticket)return;arr=arr.concat(part);msg(arr.length+' Œ‚ğæ“¾’†...');if(part.length<100)break;if(++page>50)throw Error('5000Œ‚ğ’´‚¦‚½‚½‚ß’†’f‚µ‚Ü‚µ‚½B');}if(id!==ticket)return;data=arr.map(x=>record(x.owner&&x.owner.login||user,x.name,x));render();msg('æ“¾¬Œ÷I '+data.length+' Œ‚ÌŒöŠJƒŠƒ|ƒWƒgƒŠ‚ğ•\¦‚µ‚Ü‚µ‚½B');}catch(e){if(id===ticket)msg('æ“¾¸”sF'+e.message+' è“®“ü—Í‚à—˜—p‚Å‚«‚Ü‚·B',true);}finally{if(id===ticket){button.disabled=false;button.textContent='ˆê——‚ğ©“®æ“¾';}}}
+function manual(){const found=new Set(),arr=[];for(let s of $('manual').value.split(/\r?\n/)){s=s.trim().replace(/^https?:\/\/github\.com\//i,'').replace(/\/+$/,'');const m=s.match(/^([a-z0-9-]+)\/([a-z0-9_.-]+)$/i);if(!m)continue;const key=s.toLowerCase();if(found.has(key))continue;found.add(key);arr.push(record(m[1],m[2]));}++ticket;$('load').disabled=false;$('load').textContent='ˆê——‚ğ©“®æ“¾';data=arr;render();msg(arr.length+' Œ‚ğè“®“ü—Í‚©‚ç•\¦‚µ‚Ü‚µ‚½B');}
+$('load').addEventListener('click',load);name.addEventListener('keydown',e=>{if(e.key==='Enter')load();});$('manualShow').addEventListener('click',manual);$('manualClear').addEventListener('click',()=>{$('manual').value='';});$('filter').addEventListener('input',render);$('sort').addEventListener('change',render);$('copyNames').addEventListener('click',()=>copy(view().map(x=>x.full).join('\n')));$('copyLinks').addEventListener('click',()=>copy(view().map(x=>x.github).join('\n')));$('copyBoth').addEventListener('click',()=>copy(view().map(x=>x.full+'\nGitHub: '+x.github+'\nPagesŒó•â: '+x.pages).join('\n\n')));load();
 })();
 </script>
 </body>
